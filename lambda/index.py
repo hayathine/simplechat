@@ -20,8 +20,8 @@ def lambda_handler(event, context):
         # API_Requestデータの準備
         request_data = {
             'prompt' = maessage,
-            'max_tokens' = 512,
-            'temprature' = 0.9,
+            'max_new_tokens' = 512,
+            'temperature' = 0.9,
             'top_p' = 0.9,
             'do_sample' = True,
         }

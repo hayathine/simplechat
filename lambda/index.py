@@ -31,8 +31,8 @@ def lambda_handler(event, context):
         request = urllib.request.Request(
             API_URL,
             data = json.dumps(request_data).encode('utf-8'),
-            headers = ('Content-Type': 'application/json'),
-            method = 'POST'
+            headers = {"Content-Type": "application/json"},
+            method = "POST"
         )
         
         # Responseを受け取る

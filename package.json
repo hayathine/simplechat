@@ -1,9 +1,6 @@
 {
-    "name": "bedrock-chatbot",
+    "name": "my-model-chatbot",
     "version": "0.1.0",
-    "bin": {
-        "bedrock-chatbot": "bin/bedrock-chatbot.js"
-    },
     "scripts": {
         "build": "tsc",
         "watch": "tsc -w",

@@ -4,7 +4,6 @@ import os
 import boto3
 import re  # 正規表現モジュールをインポート
 import urllib.request
-from botocore.exceptions import ClientError
 
 API_URL = https://f7c0-34-16-160-77.ngrok-free.app
 

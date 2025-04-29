@@ -6,8 +6,6 @@ import re  # 正規表現モジュールをインポート
 import urllib.request
 
 API_URL = 'https://386e-34-16-175-90.ngrok-free.app/generate'
-if API_URL is None:
-    raise Exception("環境変数 API_URL が設定されていません")
 
 def lambda_handler(event, context):
     try:

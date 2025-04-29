@@ -48,11 +48,12 @@ def lambda_handler(event, context):
         # アシスタントの応答を取得
         assistant_response = result['output']['message']['content'][0]['text']
         
-        # conversation_history に追加
-        conversation_history.append({
-            "role": "assistant",
-            "content": assistant_response
-        })
+
+        # # conversation_history に追加
+        # messages = ({
+        #     "role": "assistant",
+        #     "content": assistant_response
+        # })
 
         # 成功レスポンスの返却
         return {
@@ -66,7 +67,6 @@ def lambda_handler(event, context):
             "body": json.dumps({
                 "success": True,
                 "response": assistant_response,
-                "conversationHistory": messages
             })
         }
         

@@ -5,7 +5,7 @@ import boto3
 import re  # 正規表現モジュールをインポート
 import urllib.request
 
-API_URL = https://f7c0-34-16-160-77.ngrok-free.app
+API_URL = https://307d-34-148-0-229.ngrok-free.app
 
 
 def lambda_handler(event, context):

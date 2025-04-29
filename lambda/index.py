@@ -41,11 +41,11 @@ def lambda_handler(event, context):
 
         print("response:", json.dumps(result, indent=2, ensure_ascii=False))
 
-        # # 応答の検証
-        # try:
-        #     assistant_response = result['output']['message']['content'][0]['text']
-        # except (KeyError, IndexError) as e:
-        #     raise Exception(f"Invalid response structure: {e}")
+        # 応答の検証
+        try:
+            assistant_response = result['generated_text']
+        except (KeyError, IndexError) as e:
+            raise Exception(f"Invalid response structure: {e}")
 
         
 
@@ -66,7 +66,7 @@ def lambda_handler(event, context):
             },
             "body": json.dumps({
                 "success": True,
-                "response": json.dumps(result),
+                "response": assistant_response
             })
         }
         

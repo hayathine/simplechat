@@ -42,14 +42,14 @@ def lambda_handler(event, context):
         print("response:", json.dumps(response_body, default=str))
 
         # 応答の検証
-        if not response_body.get('output') or not response_body['output'].get('message') or not response_body['output']['message'].get('content'):
+        if not result.get('output') or not response_body['output'].get('message') or not response_body['output']['message'].get('content'):
             raise Exception("No response content from the model")
 
         # アシスタントの応答を取得
-        assistant_response = response_body['output']['message']['content'][0]['text']
+        assistant_response = result['output']['message']['content'][0]['text']
         
-        # アシスタントの応答を会話履歴に追加
-        messages.append({
+        # conversation_history に追加
+        conversation_history.append({
             "role": "assistant",
             "content": assistant_response
         })

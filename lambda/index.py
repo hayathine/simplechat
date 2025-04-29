@@ -42,7 +42,7 @@ def lambda_handler(event, context):
         print("response:", json.dumps(response_body, default=str))
 
         # 応答の検証
-        if not result.get('output') or not response_body['output'].get('message') or not response_body['output']['message'].get('content'):
+        if not result.get('output') or not result['output'].get('message') or not response_body['output']['message'].get('content'):
             raise Exception("No response content from the model")
 
         # アシスタントの応答を取得

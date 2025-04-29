@@ -42,11 +42,11 @@ def lambda_handler(event, context):
         print("response:", json.dumps(response_body, default=str))
 
         # 応答の検証
-        if not result.get('output') or not result['output'].get('message') or not response_body['output']['message'].get('content'):
-            raise Exception("No response content from the model")
+        try:
+            assistant_response = result['output']['message']['content'][0]['text']
+        except (KeyError, IndexError) as e:
+            raise Exception(f"Invalid response structure: {e}")
 
-        # アシスタントの応答を取得
-        assistant_response = result['output']['message']['content'][0]['text']
         
 
         # # conversation_history に追加

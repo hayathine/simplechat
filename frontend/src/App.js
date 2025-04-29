@@ -103,7 +103,7 @@ function ChatInterface({ signOut, user }) {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Bedrock LLM チャットボット</h1>
+        <h1>My-model LLM チャットボット</h1>
         <div className="header-buttons">
           <button className="clear-button" onClick={clearConversation}>
             会話をクリア
@@ -118,7 +118,7 @@ function ChatInterface({ signOut, user }) {
         <div className="messages-container">
           {messages.length === 0 ? (
             <div className="welcome-message">
-              <h2>Bedrock Chatbot へようこそ！</h2>
+              <h2>My-Model Chatbot へようこそ！</h2>
               <p>何でも質問してください。</p>
             </div>
           ) : (
